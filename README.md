@@ -15,26 +15,25 @@
 > [!IMPORTANT]
 > ## Arquitetura do Servidor
 > A aplicação adere ao protocolo [**OCPP**](https://en.wikipedia.org/wiki/Open_Charge_Point_Protocol). Ela consistirá num esquema cliente-servidor com dois componentes principais: <br>
-> 1. [**Serviço de Ponto de Recarga (ER)**]()
+> 1. [**Serviço de Ponto de Recarga (SPR)**]()
 >    - Ponto inicial de interação com estações de carregamento físicas (o carregador)
 > 2. [**Sistema de Gerenciamento (SG)**]()
->    - Servidor responsável por permissões, pagamentos, lógica de funcionamento, etc. O [**SG**]() consiste em um modelo [**cliente-servidor**]() com o [**Servidor**]() se comunicando via protocolo [**AMQP**](https://pt.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) com a [**ER**]() (clientes)
+>    - Servidor responsável por permissões, pagamentos, lógica de funcionamento, etc. O [**SG**]() consiste em um modelo [**cliente-servidor**]() com o [**Servidor**]() se comunicando via protocolo [**AMQP**](https://pt.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) com o [**SPR**]() (clientes)
 
 # Recursos Principais
 
 ### **Escalabilidade**
-- A arquitetura permite fácil escalabilidade adicionando [**ER**]() adicionais, tornando-a adequada para gerenciar um grande número de estações de carregamento físicas sem depender de um único [**Servidor**]().
+- A arquitetura permite fácil escalabilidade adicionando [**SPR**]() adicionais, tornando-a adequada para gerenciar um grande número de estações de carregamento físicas sem depender de um único [**Servidor**]().
 ### **Flexibilidade e Extensibilidade**
-- A separação de funções entre o [**ER**]() e o [**SG**]() permite a fácil adição de novos recursos sem alterações significativas na arquitetura geral do sistema.
+- A separação de funções entre o [**SPR**]() e o [**SG**]() permite a fácil adição de novos recursos sem alterações significativas na arquitetura geral do sistema.
 ### **Gerenciamento de Desempenho**
 - O sistema baseado em fila de mensagens, aliado ao backend escrito em [**Rust**](), permite multi-processamento, controle e prioridade de processamento, garantindo uma resposta rápida às solicitações dos clientes.
 ### **Abertura e Extensibilidade**
 - Utilizando padrões abertos e tecnologias open-source populares, nos permite fácil integração com outros sistemas e serviços, como sistemas de pagamento, plataformas de controle e aplicações de terceiros.
 
+# 1. Serviço de Ponto de Recarga (SPR)
 
-# 1. Estação de Recarga (ER)
-
-![ER-API](https://github.com/amindWalker/moov.olt-mvp/assets/66398400/ca002796-e967-4a56-a226-1e0506acd47e)
+![SPR-API](https://github.com/amindWalker/moov.olt-mvp/assets/66398400/ca002796-e967-4a56-a226-1e0506acd47e)
 
 - Não toma decisões nem contém qualquer lógica, apenas executa tarefas fornecidas pelo [**Servidor**]().
 - Responsável pela interação direta com as estações de carregamento físicas.
@@ -46,9 +45,9 @@
 ![SG](https://github.com/amindWalker/moov.olt-mvp/assets/66398400/e26be7b5-b054-4b9d-8bc8-a353313181b4)
 
 - Gerencia a lógica de negócios, incluindo permissões, controle do processo de carregamento e pagamentos.
-- Não tem conhecimento sobre o funcionamento interno da [**ER**]().
-- Aceita dados requisitados pela [**ER**](), toma decisões e envia tarefas de volta para execução baseda no tipo de mensagem solicitada (mensagens da API do OCPP).
-- Utiliza o protocolo [**AMQP**]() para comunicação com a [**ER**]().
+- Não tem conhecimento sobre o funcionamento interno do [**SPR**]().
+- Aceita dados requisitados pelo [**SPR**](), toma decisões e envia tarefas de volta para execução baseada no tipo de mensagem solicitada (mensagens da API do OCPP).
+- Utiliza o protocolo [**AMQP**]() para comunicação com o [**SPR**]().
 
 > [!IMPORTANT]
 > # BACKEND
@@ -135,6 +134,8 @@ async fn root() -> &'static str {
 # TailwindCSS
 
 <img src="https://github.com/amindWalker/moov.olt-mvp/assets/66398400/069243d9-2920-49c5-b7b6-8007502328b8" width="500">
+
+
 
 - [**Produtividade**](): oferece classes pré-definidas para estilos comuns, acelerando o processo de desenvolvimento e permitindo prototipagem rápida.
 - [**Customização Flexível**](): com base em classes utilitárias, facilita a personalização de estilos sem a obrigatoriedade de escrever [**CSS**]() personalizado, proporcionando flexibilidade total.
