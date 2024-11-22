@@ -1,0 +1,146 @@
+[2m2024-11-19T17:21:25.051146Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m Server listening on 0.0.0.0:3000
+[2m2024-11-19T17:53:35.626352Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m Server listening on 0.0.0.0:3000
+[2m2024-11-19T17:56:57.769361Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m Server listening on 0.0.0.0:3000
+[2m2024-11-19T17:57:00.637439Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m Websocket Client user agent is a valid client
+[2m2024-11-19T17:57:00.637666Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m [1m[32mNew WebSocket connection:[39m[0m 192.168.1.7:56760
+[2m2024-11-19T17:57:01.975487Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+	[38;2;255;255;255mINCOMING CALL[39m
+	[38;2;180;180;180mFROM CHARGER[39m
+		[2,"9","BootNotification",{"chargePointModel":"23","chargePointSerialNumber":"NKYK430037668","chargePointVendor":"Intelbras","firmwareVersion":"1.2.672"}]
+[48;2;0;115;0m ADDR [49m [38;2;0;215;0m192.168.1.7:56760[39m
+
+
+[2m2024-11-19T17:57:01.975781Z[0m [34mDEBUG[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+[1m[48;2;0;0;0m PARSED OCPP CALL [49m[0m
+ [48;2;139;0;139m BootNotification [49m
+[2m2024-11-19T17:57:01.975980Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+[1m[48;2;0;0;0m CALL [49m[0m
+ [48;2;0;99;255m REQUEST [49m
+BootNotificationRequest { charge_box_serial_number: None, charge_point_model: "23", charge_point_serial_number: Some("NKYK430037668"), charge_point_vendor: "Intelbras", firmware_version: Some("1.2.672"), iccid: None, imsi: None, meter_serial_number: None, meter_type: None }
+[2m2024-11-19T17:57:01.976129Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+[1m[48;2;0;0;0m CALL RESULT [49m[0m
+ [48;2;0;125;0m RESPONSE [49m
+"{\"MessageTypeId\":3,\"MessageId\":\"9\",\"Payload\":{\"currentTime\":\"2024-11-19T17:57:01.976049323Z\",\"interval\":300,\"status\":\"Accepted\"}}"
+[2m2024-11-19T17:57:02.606833Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+	[38;2;255;255;255mINCOMING CALL[39m
+	[38;2;180;180;180mFROM CHARGER[39m
+		[2,"10","DataTransfer",{"vendorId":"Intelbras","messageId":"gatewayInfo","data":"{\"SN\":\"NKYK430037668\",\"fwVer\":\"V43.0.364\",\"gateCode\":107,\"measureType\":1,\"disconnectReason\":4,\"maxCurr\":100,\"phase\":1,\"sdCardStatus\":0}"}]
+[48;2;0;115;0m ADDR [49m [38;2;0;215;0m192.168.1.7:56760[39m
+
+
+[2m2024-11-19T17:57:02.607077Z[0m [34mDEBUG[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+[1m[48;2;0;0;0m PARSED OCPP CALL [49m[0m
+ [48;2;139;0;139m DataTransfer [49m
+[2m2024-11-19T17:57:02.607312Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+	[38;2;255;255;255mINCOMING CALL[39m
+	[38;2;180;180;180mFROM CHARGER[39m
+		[2,"offline-1","StartTransaction",{"connectorId":1,"idTag":"NKYK430037668","meterStart":1,"timestamp":"2024-10-14T03:44:31Z"}]
+[48;2;0;115;0m ADDR [49m [38;2;0;215;0m192.168.1.7:56760[39m
+
+
+[2m2024-11-19T17:57:02.607443Z[0m [34mDEBUG[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+[1m[48;2;0;0;0m PARSED OCPP CALL [49m[0m
+ [48;2;139;0;139m StartTransaction [49m
+[2m2024-11-19T17:57:03.102150Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+	[38;2;255;255;255mINCOMING CALL[39m
+	[38;2;180;180;180mFROM CHARGER[39m
+		[2,"11","StatusNotification",{"connectorId":0,"status":"Available","errorCode":"NoError","timestamp":"2024-11-19T17:56:55Z","vendorId":"Intelbras","info":"{\"reason\":\"None\",\"cpv\":0,\"rv\":0}","vendorErrorCode":"no error"}]
+[48;2;0;115;0m ADDR [49m [38;2;0;215;0m192.168.1.7:56760[39m
+
+
+[2m2024-11-19T17:57:03.102416Z[0m [34mDEBUG[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+[1m[48;2;0;0;0m PARSED OCPP CALL [49m[0m
+ [48;2;139;0;139m StatusNotification [49m
+[2m2024-11-19T17:57:03.518287Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+	[38;2;255;255;255mINCOMING CALL[39m
+	[38;2;180;180;180mFROM CHARGER[39m
+		[2,"12","StatusNotification",{"connectorId":1,"status":"Available","errorCode":"NoError","timestamp":"2024-11-19T17:56:55Z","vendorId":"Intelbras","info":"{\"reason\":\"None\",\"cpv\":0,\"rv\":0}","vendorErrorCode":"no error"}]
+[48;2;0;115;0m ADDR [49m [38;2;0;215;0m192.168.1.7:56760[39m
+
+
+[2m2024-11-19T17:57:03.518603Z[0m [34mDEBUG[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+[1m[48;2;0;0;0m PARSED OCPP CALL [49m[0m
+ [48;2;139;0;139m StatusNotification [49m
+[2m2024-11-19T17:57:03.518891Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+	[38;2;255;255;255mINCOMING CALL[39m
+	[38;2;180;180;180mFROM CHARGER[39m
+		[2,"13","Heartbeat",{}]
+[48;2;0;115;0m ADDR [49m [38;2;0;215;0m192.168.1.7:56760[39m
+
+
+[2m2024-11-19T17:57:03.518992Z[0m [34mDEBUG[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+[1m[48;2;0;0;0m PARSED OCPP CALL [49m[0m
+ [48;2;139;0;139m Heartbeat [49m
+[2m2024-11-19T17:57:38.718221Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m Server listening on 0.0.0.0:3000
+[2m2024-11-19T19:37:14.451477Z[0m [31mERROR[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+
+Panic: PanicHookInfo {
+    payload: Any { .. },
+    location: Location {
+        file: "src/main.rs",
+        line: 302,
+        col: 10,
+    },
+    can_unwind: true,
+    force_no_backtrace: false,
+}
+
+
+[2m2024-11-19T19:37:41.766289Z[0m [31mERROR[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+
+Panic: PanicHookInfo {
+    payload: Any { .. },
+    location: Location {
+        file: "src/main.rs",
+        line: 302,
+        col: 10,
+    },
+    can_unwind: true,
+    force_no_backtrace: false,
+}
+
+
+[2m2024-11-19T19:37:47.326317Z[0m [31mERROR[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+
+Panic: PanicHookInfo {
+    payload: Any { .. },
+    location: Location {
+        file: "src/main.rs",
+        line: 302,
+        col: 10,
+    },
+    can_unwind: true,
+    force_no_backtrace: false,
+}
+
+
+[2m2024-11-19T19:38:12.207963Z[0m [31mERROR[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+
+Panic: PanicHookInfo {
+    payload: Any { .. },
+    location: Location {
+        file: "src/main.rs",
+        line: 302,
+        col: 10,
+    },
+    can_unwind: true,
+    force_no_backtrace: false,
+}
+
+
+[2m2024-11-19T19:38:28.995244Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m Server listening on 0.0.0.0:3000
+[2m2024-11-19T19:38:52.519804Z[0m [31mERROR[0m [2mmoovolt_backend_csms[0m[2m:[0m 
+
+Panic: PanicHookInfo {
+    payload: Any { .. },
+    location: Location {
+        file: "src/main.rs",
+        line: 302,
+        col: 10,
+    },
+    can_unwind: true,
+    force_no_backtrace: false,
+}
+
+
+[2m2024-11-19T19:39:08.894492Z[0m [32m INFO[0m [2mmoovolt_backend_csms[0m[2m:[0m Server listening on 0.0.0.0:3000
